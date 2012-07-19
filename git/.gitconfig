@@ -1,0 +1,18 @@
+[user]
+	name = Simon Eriksson
+	email = k.simon.eriksson@gmail.com
+[alias]
+	ci = commit
+	co = checkout
+	st = status
+	automerge = !git config branch.master.remote origin && git config branch.master.merge refs/heads/master
+[color]
+	interactive = auto
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim -w
+[apply]
+	whitespace = nowarn
