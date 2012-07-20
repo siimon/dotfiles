@@ -5,9 +5,9 @@ set smarttab
 set shiftwidth=2
 set autoindent
 set expandtab
-set background=dark
-" Explicitly set 256 color support
-set t_Co=256
+let g:solarized_termcolors=256
+set background=light
+color solarized
 
 " Enable filetype-specific indenting and plugins
 filetype plugin indent on

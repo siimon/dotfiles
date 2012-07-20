@@ -6,7 +6,9 @@
 	co = checkout
 	st = status
 	automerge = !git config branch.master.remote origin && git config branch.master.merge refs/heads/master
+  lg = log --graph --topo-order --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cred<%an>'
 [color]
+  ui = auto
 	interactive = auto
 	diff = auto
 	status = auto
