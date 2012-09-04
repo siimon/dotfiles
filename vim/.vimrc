@@ -8,6 +8,14 @@ set expandtab
 let g:solarized_termcolors=256
 set background=light
 color solarized
+set columns=120
+set lines=100
+set ignorecase
+
+" Start NERDTree by default
+autocmd vimenter * NERDTree
+" Exit vim if NERDTree is the only window left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Enable filetype-specific indenting and plugins
 filetype plugin indent on
