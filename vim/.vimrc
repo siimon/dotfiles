@@ -6,16 +6,23 @@ set shiftwidth=2
 set autoindent
 set expandtab
 let g:solarized_termcolors=256
-set background=light
-color solarized
+color Tomorrow-Night
 set columns=120
 set lines=100
 set ignorecase
+
+if has("win32")
+  cd C:\Users\SIMON
+endif
 
 " Start NERDTree by default
 autocmd vimenter * NERDTree
 " Exit vim if NERDTree is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+map <F2> :NERDTreeToggle<CR>
+" open Nerd Tree in folder of file in active buffer
+map <F3> :NERDTree %:p:h<CR>
 
 " Enable filetype-specific indenting and plugins
 filetype plugin indent on
