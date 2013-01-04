@@ -15,8 +15,6 @@ if has("win32")
   cd C:\Users\SIMON
 endif
 
-" Start NERDTree by default
-autocmd vimenter * NERDTree
 " Exit vim if NERDTree is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
