@@ -33,3 +33,26 @@ function bswt
 	echo $dir
 	svn sw $dir
 }
+
+$dotfiles = resolve-path ~/dotfiles/
+$scripts = join-path $dotfiles "Powershell"
+. (join-path $scripts "Aliases.ps1")
+
+# Vim-style shorten-path originally from Tomas Restrepo
+# https://github.com/tomasr
+function get-vimShortPath([string] $path) {
+   $loc = $path.Replace($HOME, '~')
+	 $loc = $loc.Replace($env:WINDIR, '[Windows]')
+   # remove prefix for UNC paths
+   $loc = $loc -replace '^[^:]+::', ''
+   # make path shorter like tabs in Vim,
+   # handle paths starting with \\ and . correctly
+   return ($loc -replace '\\(\.?)([^\\])[^\\]*(?=\\)','\$1$2')
+}
+
+$env:EDITOR = "gvim"
+$env:VISUAL = $env:EDITOR
+$env:GIT_EDITOR = $env:EDITOR
+$env:TERM = "msys"
+
+
