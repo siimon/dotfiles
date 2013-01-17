@@ -18,3 +18,5 @@
 	editor = vim -w
 [apply]
 	whitespace = nowarn
+[push]
+  default = simple

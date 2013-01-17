@@ -10,3 +10,6 @@
 [submodule ".\\.vim/bundle/vim-ps1"]
 	path = .\\.vim/bundle/vim-ps1
 	url = https://github.com/PProvost/vim-ps1.git
+[submodule ".\\.vim\\bundle\\jshint.vim"]
+	path = .\\.vim\\bundle\\jshint.vim
+	url = git://github.com/walm/jshint.vim.git
