@@ -1,4 +1,3 @@
-call pathogen#infect()
 
 set tabstop=2
 set smarttab
@@ -6,7 +5,7 @@ set shiftwidth=2
 set autoindent
 set expandtab
 let g:solarized_termcolors=256
-color Tomorrow-Night
+"color Tomorrow-Night
 set columns=120
 set lines=100
 set ignorecase
