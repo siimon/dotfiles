@@ -47,6 +47,8 @@ function bbra($src, $dest){
   svn sw $destDir
 }
 
+function brunsrv{ .\Application\WCFConsole\bin\Debug\SFS.Buster.Server.WCFConsole.exe }
+
 $dotfiles = resolve-path ~/dotfiles/
 $scripts = join-path $dotfiles "Powershell"
 . (join-path $scripts "Aliases.ps1")
