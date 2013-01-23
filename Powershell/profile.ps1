@@ -7,8 +7,10 @@ foreach($setting in $configXML.settings.setting)
 
 echo $config
 
+function vim($file) { & 'C:\Program Files (x86)\Vim\vim73\gvim.exe' + $file }
 function cbm{ change_buster_dir("MobileTrunk") }
 function cbw{ change_buster_dir("work") }
+function cbw2 { change_buster_dir("work2") }
 function cbp{ change_buster_dir("peer") }
 function doc{ Set-Location $config.doc_dir }
 function scripts { Set-Location $config.scripts_dir }
@@ -32,6 +34,17 @@ function bswt
 	$dir = $config.buster_svn+ "/trunk"
 	echo $dir
 	svn sw $dir
+}
+
+function bbra($src, $dest){
+  $srcDir = $config.buster_svn + "/branches/"+$src
+  $destDir = $config.buster_svn + "/branches/"+$dest
+  echo "SRC: "  $srcDir
+  echo "DEST: " $destDir
+
+  $commitMsg = "Working branch for " +$dest
+  svn cp $srcDir $destDir -m $commitMsg
+  svn sw $destDir
 }
 
 $dotfiles = resolve-path ~/dotfiles/
