@@ -13,6 +13,10 @@ ZSH_THEME="geoffgarside"
 alias c="cd ~/code/"
 alias doc="cd ~/Documents/"
 
+export TODOTXT_DEFAULT_ACTION=ls
+export TODOTXT_DATE_ON_ADD=1
+alias t='todo.sh -d /Users/simoneriksson/todo.cfg'
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
