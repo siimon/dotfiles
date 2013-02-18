@@ -8,6 +8,7 @@ foreach($setting in $configXML.settings.setting)
 echo $config
 
 function vim($file) { & 'C:\Program Files (x86)\Vim\vim73\gvim.exe' + $file }
+function vs { & sudo 'C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\devenv.exe' }
 function cbm{ change_buster_dir("MobileTrunk") }
 function cbw{ change_buster_dir("work") }
 function cbw2 { change_buster_dir("work2") }
