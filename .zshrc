@@ -40,7 +40,7 @@ plugins=(git brew osx node npm)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/share/npm/bin/
 
 # Determine what character to use in place of the '$' for my prompt.
 function repo_char {
@@ -67,3 +67,9 @@ $(virtualenv_info)$(repo_char) '
 
 # Display the date.  (My desktop at work uses $(date -u ...) instead, because I use UTC a lot at work.
 RPROMPT='$(date "+%a %F %T %Z")'
+
+# Use Z-zsh, https://github.com/sjl/z-zsh
+. ~/code/dotfiles/zsh/z-zsh/z.sh
+function precmd(){
+  z --add "$(pwd -P)"
+}

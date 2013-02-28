@@ -28,3 +28,6 @@
 [submodule ".\\.vim\\bundle\\syntastic"]
 	path = .\\.vim\\bundle\\syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "zsh/z-zsh"]
+	path = zsh/z-zsh
+	url = git://github.com/sjl/z-zsh.git
