@@ -7,26 +7,26 @@
 [submodule ".vim/bundle/vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule ".\\.vim/bundle/vim-ps1"]
-	path = .\\.vim/bundle/vim-ps1
+[submodule ".vim/bundle/vim-ps1"]
+	path = .vim/bundle/vim-ps1
 	url = https://github.com/PProvost/vim-ps1.git
-[submodule ".\\.vim\\bundle\\jshint.vim"]
-	path = .\\.vim\\bundle\\jshint.vim
+[submodule ".vim/bundle/jshint.vim"]
+	path = .vim/bundle/jshint.vim
 	url = git://github.com/walm/jshint.vim.git
-[submodule ".\\.vim\\bundle\\vim-less"]
-	path = .\\.vim\\bundle\\vim-less
+[submodule ".vim/bundle/vim-less"]
+	path = .vim/bundle/vim-less
 	url = git://github.com/groenewege/vim-less.git
-[submodule ".\\.vim\\bundle\\vim-surround"]
-	path = .\\.vim\\bundle\\vim-surround
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule ".vim\\bundle\\vim-haml"]
-	path = .vim\\bundle\\vim-haml
+[submodule ".vim/bundle/vim-haml"]
+	path = .vim/bundle/vim-haml
 	url = git://github.com/tpope/vim-haml.git
-[submodule ".\\.vim\\bundle\\vim-markdown"]
-	path = .\\.vim\\bundle\\vim-markdown
+[submodule ".vim/bundle/vim-markdown"]
+	path = .vim/bundle/vim-markdown
 	url = git://github.com/tpope/vim-markdown.git
-[submodule ".\\.vim\\bundle\\syntastic"]
-	path = .\\.vim\\bundle\\syntastic
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
 [submodule "zsh/z-zsh"]
 	path = zsh/z-zsh
