@@ -13,6 +13,7 @@ ZSH_THEME="geoffgarside"
 alias c="cd ~/code/"
 alias doc="cd ~/Documents/"
 
+# TODO.TXT Settings, https://github.com/ginatrapani/todo.txt-cli
 export TODOTXT_DEFAULT_ACTION=ls
 export TODOTXT_DATE_ON_ADD=1
 alias t='todo.sh -d /Users/simoneriksson/todo.cfg'
@@ -35,7 +36,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew osx node npm)
+plugins=(git brew osx node npm pip django python)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -73,3 +74,4 @@ RPROMPT='$(date "+%a %F %T %Z")'
 function precmd(){
   z --add "$(pwd -P)"
 }
+ctags=/usr/local/bin/ctags

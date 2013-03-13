@@ -15,6 +15,10 @@ if has("win32")
   cd C:\Users\SIMON
 endif
 
+if has("unix")
+  let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+endif
+
 " Exit vim if NERDTree is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
