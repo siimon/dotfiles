@@ -120,3 +120,6 @@ map Å O<C-R>"<Esc>
 
 " allow switching away from buffers that have changes
 set hidden
+
+let g:django_projects = '~/code'
+let g:django_activate_virtualenv = 1
