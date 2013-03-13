@@ -31,6 +31,3 @@
 [submodule "zsh/z-zsh"]
 	path = zsh/z-zsh
 	url = git://github.com/sjl/z-zsh.git
-[submodule ".vim/vim-django"]
-	path = .vim/vim-django
-	url = git://github.com/cwood/vim-django.git
