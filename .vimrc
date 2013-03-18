@@ -10,6 +10,7 @@ color Tomorrow-Night
 set columns=120
 set lines=100
 set ignorecase
+set laststatus=2
 
 if has("win32")
   cd C:\Users\SIMON
@@ -103,8 +104,8 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 map <S-Enter> O<Esc>
 map <CR> o<Esc>
 
-" map leader-a to open a vertical split of the alternate file
-map <leader>a :AV<CR>
+" map leader-a to open a horizontal split of the alternate file
+map <leader>a :split #<CR>
 
 " Maps for jj to act as Esc
 ino jj <esc>
@@ -121,5 +122,4 @@ map Å O<C-R>"<Esc>
 " allow switching away from buffers that have changes
 set hidden
 
-let g:django_projects = '~/code'
-let g:django_activate_virtualenv = 1
+let g:django_projects = "/Users/simoneriksson/code"

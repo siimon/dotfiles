@@ -34,3 +34,9 @@
 [submodule ".vim/bundle/vim-django"]
 	path = .vim/bundle/vim-django
 	url = git://github.com/cwood/vim-django.git
+[submodule ".vim/bundle/vim-virtualenv.git"]
+	path = .vim/bundle/vim-virtualenv.git
+	url = git://github.com/jmcantrell/vim-virtualenv.git
+[submodule ".vim/bundle/vim-powerline"]
+	path = .vim/bundle/vim-powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
