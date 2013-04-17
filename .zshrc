@@ -16,7 +16,7 @@ alias doc="cd ~/Documents/"
 # TODO.TXT Settings, https://github.com/ginatrapani/todo.txt-cli
 export TODOTXT_DEFAULT_ACTION=ls
 export TODOTXT_DATE_ON_ADD=1
-alias t='todo.sh -d /Users/simoneriksson/todo.cfg'
+alias t='todo.sh -d /Users/simoneriksson/Dropbox/todo/todo.cfg'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
