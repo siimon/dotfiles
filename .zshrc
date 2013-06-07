@@ -75,3 +75,6 @@ function precmd(){
   z --add "$(pwd -P)"
 }
 ctags=/usr/local/bin/ctags
+
+. ~/.nvm/nvm.sh
+
