@@ -12,7 +12,6 @@ ZSH_THEME="geoffgarside"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c="cd ~/code/"
 alias doc="cd ~/Documents/"
-alias vim='/usr/local/bin/mvim'
 
 # TODO.TXT Settings, https://github.com/ginatrapani/todo.txt-cli
 export TODOTXT_DEFAULT_ACTION=ls
