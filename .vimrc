@@ -78,7 +78,6 @@ endfunction
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
-autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufRead *.json :set ft=javascript
 
 " leader is set to the dash key, as it is much friendlier on a swedish
