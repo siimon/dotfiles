@@ -7,8 +7,6 @@ set autoindent
 set expandtab
 let g:solarized_termcolors=256
 color Tomorrow-Night
-set columns=120
-set lines=100
 set ignorecase
 set laststatus=2
 
@@ -91,3 +89,4 @@ vmap <C-p> "_dP
 " allow switching away from buffers that have changes
 set hidden
 
+let g:django_projects = "/Users/simoneriksson/code"
