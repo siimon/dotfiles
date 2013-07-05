@@ -15,6 +15,7 @@
 	branch = auto
 [core]
 	excludesfile = ~/.gitignore
+  editor= vim
 [apply]
 	whitespace = nowarn
 [push]
