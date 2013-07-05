@@ -10,7 +10,6 @@ color Tomorrow-Night
 set ignorecase
 set laststatus=2
 
-
 if has("win32")
   cd C:\Users\SIMON
 endif
