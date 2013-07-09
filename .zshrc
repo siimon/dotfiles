@@ -36,7 +36,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew osx node npm pip django python)
+plugins=(git brew osx node npm pip python jira colorize bower battery)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -54,6 +54,7 @@ function virtualenv_info {
     [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
 }
 
+
 # All of my git variables.
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
@@ -66,8 +67,8 @@ PROMPT='
 %{$fg[magenta]%}%n%{$reset_color%} in %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
 $(virtualenv_info)$(repo_char) '
 
-# Display the date.  (My desktop at work uses $(date -u ...) instead, because I use UTC a lot at work.
-RPROMPT='$(date "+%a %F %T %Z")'
+# Show current date in right prompt
+RPROMPT='$(date "+%a %F %T %Z") ($(battery_pct_prompt))'
 
 # Use Z-zsh, https://github.com/sjl/z-zsh
 . ~/code/dotfiles/zsh/z-zsh/z.sh
