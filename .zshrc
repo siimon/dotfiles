@@ -115,4 +115,3 @@ ctags=/usr/local/bin/ctags
 
 . ~/.nvm/nvm.sh
 
-set -o vi
