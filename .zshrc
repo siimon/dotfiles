@@ -100,7 +100,7 @@ export RESET
 
 # I like a new line between my result and the next prompt.  Makes it easier to see
 PROMPT='
-%{${MAGENTA}%}%n%{$reset_color%} in %{${GREEN}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
+%{${MAGENTA}%}%n%{$reset_color%} in %{${ORANGE}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
 $(virtualenv_info)$(repo_char) '
 
 # Show current date in right prompt
