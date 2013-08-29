@@ -58,9 +58,15 @@ nmap <leader>l :set list!<CR>
 
 autocmd BufRead *.json :set ft=javascript
 
-" leader is set to the dash key, as it is much friendlier on a swedish
-" keyboard
-let mapleader = "-"
+" use , as leader key
+let mapleader = ","
+
+" use leader-p to open ctrlp
+map <leader>p :CtrlP<CR>
+
+" ignore node_modules directory
+set wildignore+=*/node_modules/*
+
 
 set nobackup
 set noswapfile
