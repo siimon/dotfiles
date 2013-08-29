@@ -22,10 +22,6 @@ endif
 " Exit vim if NERDTree is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-map <F2> :NERDTreeToggle<CR>
-" open Nerd Tree in folder of file in active buffer
-map <F3> :NERDTree %:p:h<CR>
-
 " Enable filetype-specific indenting and plugins
 filetype plugin indent on
 
@@ -62,7 +58,11 @@ autocmd BufRead *.json :set ft=javascript
 let mapleader = ","
 
 " use leader-p to open ctrlp
-map <leader>p :CtrlP<CR>
+map <leader>b :CtrlP<CR>
+
+map <leader>s :Ag 
+map <leader>d :NERDTreeToggle<CR>
+map <leader>f :NERDTreeFind<CR>
 
 " ignore node_modules directory
 set wildignore+=*/node_modules/*
