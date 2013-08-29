@@ -92,8 +92,5 @@ cno jj <c-c>
 nmap <C-p> "_ddP
 vmap <C-p> "_dP
 
-
 " allow switching away from buffers that have changes
 set hidden
-
-let g:django_projects = "/Users/simoneriksson/code"
