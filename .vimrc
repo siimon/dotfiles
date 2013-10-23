@@ -22,12 +22,9 @@ endif
 " Exit vim if NERDTree is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" Enable filetype-specific indenting and plugins
-filetype plugin indent on
 
 " Syntax Highlighting on
 set nocompatible
-syntax on
 
 " Disable bell.
 set vb t_vb=
@@ -94,3 +91,11 @@ vmap <C-p> "_dP
 
 " allow switching away from buffers that have changes
 set hidden
+
+
+" vim-golang settings
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
