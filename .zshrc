@@ -16,7 +16,7 @@ alias doc="cd ~/Documents/"
 # TODO.TXT Settings, https://github.com/ginatrapani/todo.txt-cli
 export TODOTXT_DEFAULT_ACTION=ls
 export TODOTXT_DATE_ON_ADD=1
-alias t='todo.sh -d /Users/simoneriksson/Dropbox/todo/todo.cfg'
+alias t='todo.sh -d ~/Dropbox/todo/todo.cfg'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -41,7 +41,7 @@ plugins=(git brew osx node npm pip python jira colorize bower battery)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/share/npm/bin/
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/share/npm/bin/:/usr/local/go/bin/
 
 # Determine what character to use in place of the '$' for my prompt.
 function repo_char {
