@@ -55,8 +55,8 @@ autocmd BufRead *.json :set ft=javascript
 " use , as leader key
 let mapleader = ","
 
-" use leader-p to open ctrlp
-map <leader>b :CtrlP<CR>
+" use leader-g to open ctrlp
+map <leader>g :CtrlP<CR>
 
 map <leader>s :Ag 
 map <leader>d :NERDTreeToggle<CR>
@@ -64,6 +64,7 @@ map <leader>f :NERDTreeFind<CR>
 
 " ignore node_modules directory
 set wildignore+=*/node_modules/*
+set wildignore+=*/dist*/
 
 
 set nobackup

@@ -41,7 +41,8 @@ plugins=(git brew osx node npm pip python jira colorize bower battery)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/share/npm/bin/:/usr/local/go/bin/
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/share/npm/bin/:/usr/local/go/bin/:~/.gopath/bin
+export GOPATH=~/.gopath
 
 # Determine what character to use in place of the '$' for my prompt.
 function repo_char {
