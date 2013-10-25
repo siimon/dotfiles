@@ -12,6 +12,7 @@ set laststatus=2
 
 if has("win32")
   cd C:\Users\SIMON
+  set guifont=Consolas:h10
 endif
 
 
