@@ -64,7 +64,8 @@ map <leader>f :NERDTreeFind<CR>
 
 " ignore node_modules directory
 set wildignore+=*/node_modules/*
-set wildignore+=*/dist*/
+set wildignore+=*/dist/*
+set wildignore+=*/bower_components/*
 
 
 set nobackup
