@@ -12,6 +12,7 @@ ZSH_THEME="geoffgarside"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c="cd ~/code/"
 alias doc="cd ~/Documents/"
+alias we="~/code/ansiweather/ansiweather"
 
 # TODO.TXT Settings, https://github.com/ginatrapani/todo.txt-cli
 export TODOTXT_DEFAULT_ACTION=ls
@@ -57,7 +58,7 @@ function virtualenv_info {
 
 
 # All of my git variables.
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[yellow]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[blue]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
@@ -101,11 +102,8 @@ export RESET
 
 # I like a new line between my result and the next prompt.  Makes it easier to see
 PROMPT='
-%{${MAGENTA}%}%n%{$reset_color%} in %{${ORANGE}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
+%{${ORANGE}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
 $(virtualenv_info)$(repo_char) '
-
-# Show current date in right prompt
-RPROMPT='($(battery_pct_prompt))'
 
 # Use Z-zsh, https://github.com/sjl/z-zsh
 . ~/code/dotfiles/zsh/z-zsh/z.sh
@@ -116,3 +114,6 @@ ctags=/usr/local/bin/ctags
 
 . ~/.nvm/nvm.sh
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
