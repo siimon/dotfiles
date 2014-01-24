@@ -37,7 +37,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew osx node npm pip python jira colorize bower battery)
+plugins=(git brew osx node npm pip bower)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -58,7 +58,7 @@ function virtualenv_info {
 
 
 # All of my git variables.
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[blue]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
@@ -102,8 +102,8 @@ export RESET
 
 # I like a new line between my result and the next prompt.  Makes it easier to see
 PROMPT='
-%{${ORANGE}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
-$(virtualenv_info)$(repo_char) '
+%{${MAGENTA}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
+$(virtualenv_info)> '
 
 # Use Z-zsh, https://github.com/sjl/z-zsh
 . ~/code/dotfiles/zsh/z-zsh/z.sh
