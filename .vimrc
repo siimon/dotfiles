@@ -1,4 +1,5 @@
 call pathogen#infect()
+call pathogen#helptags()
 
 set tabstop=2
 set smarttab
