@@ -98,6 +98,10 @@ vmap <C-p> "_dP
 " allow switching away from buffers that have changes
 set hidden
 
+" spell checking
+nmap <silent> <leader>w :set spell!<CR>
+set spelllang=en_us
+
 
 " vim-golang settings
 filetype off
