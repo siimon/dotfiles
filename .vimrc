@@ -8,7 +8,7 @@ set autoindent
 set expandtab
 let g:solarized_termcolors=256
 let g:solarized_diffmode="high"
-color Tomorrow-Night-Eighties
+color Tomorrow-Night-Bright
 set background=dark
 set ignorecase
 set laststatus=2
