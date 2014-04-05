@@ -57,12 +57,6 @@ function virtualenv_info {
 }
 
 
-# All of my git variables.
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[yellow]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 
 if tput setaf 1 &> /dev/null; then
@@ -73,12 +67,18 @@ if tput setaf 1 &> /dev/null; then
 		GREEN=$(tput setaf 190)
 		PURPLE=$(tput setaf 141)
 		WHITE=$(tput setaf 0)
-	else
+    LIGHT_GREEN=$(tput setaf 120)
+    YELLOW=$(tput setaf 226)
+    RED=$(tput setaf 196)
+  else
 		MAGENTA=$(tput setaf 5)
 		ORANGE=$(tput setaf 4)
 		GREEN=$(tput setaf 2)
 		PURPLE=$(tput setaf 1)
 		WHITE=$(tput setaf 7)
+    LIGHT_GREEN=$(tput setaf 2)
+    YELLOW=$(tput setaf 3)
+    RED=$(tput setaf 1)
 	fi
 	BOLD=$(tput bold)
 	RESET=$(tput sgr0)
@@ -99,10 +99,21 @@ export PURPLE
 export WHITE
 export BOLD
 export RESET
+export YELLOW
+export LIGHT_GREEN
+export RED
+
+
+# All of my git variables.
+ZSH_THEME_GIT_PROMPT_PREFIX=" on %{${YELLOW}%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{${RED}%}!"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{${RED}%}?"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # I like a new line between my result and the next prompt.  Makes it easier to see
 PROMPT='
-%{${MAGENTA}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
+%{${LIGHT_GREEN}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
 $(virtualenv_info)> '
 
 # Use Z-zsh, https://github.com/sjl/z-zsh
@@ -117,3 +128,15 @@ ctags=/usr/local/bin/ctags
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+
+# Output all different colors that can be used in tput setaf
+aa_256 ()
+{
+( x=`tput op` y=`printf %$((${COLUMNS}-6))s`;
+for i in {0..256};
+do
+o=00$i;
+echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;
+done )
+}
