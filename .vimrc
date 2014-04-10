@@ -15,9 +15,9 @@ set laststatus=2
 
 if has("win32")
   cd C:\Users\SIMON
-  set guifont=Consolas:h10
 endif
 
+set guifont=Menlo\ Regular:h13
 
 if has("unix")
   let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
@@ -36,9 +36,6 @@ set vb t_vb=
 " line numbers
 set number
 set numberwidth=3
-
-" Open new horizontal split windows below current
-set splitbelow
 
 " Open new vertical split windows to the right
 set splitright
