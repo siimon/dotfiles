@@ -140,3 +140,5 @@ o=00$i;
 echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;
 done )
 }
+
+export NODE_PATH=.
