@@ -1,11 +1,17 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-set tabstop=2
-set smarttab
 set shiftwidth=2
-set autoindent
-set expandtab
+set tabstop=2
+
+" use tabs
+set softtabstop=2
+
+" use spaces
+"set autoindent
+"set expandtab
+"set smarttab
+
 let g:solarized_termcolors=256
 let g:solarized_diffmode="high"
 color Tomorrow-Night-Bright
@@ -57,6 +63,10 @@ let mapleader = ","
 
 " use leader-g to open ctrlp
 map <leader>g :CtrlP<CR>
+
+" lw to use selected word in ctrlp
+nmap <leader>lw :CtrlP<CR><C-\>w
+vmap <leader>lw y:CtrlP<CR><C-\>c
 
 map <leader>s :Ag 
 map <leader>d :NERDTreeToggle<CR>
