@@ -142,3 +142,5 @@ done )
 }
 
 export NODE_PATH=.
+
+source ~/.zsh_private
