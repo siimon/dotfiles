@@ -23,6 +23,9 @@ if has("win32")
   cd C:\Users\SIMON
 endif
 
+set encoding=utf-8
+set fileencoding=utf-8
+
 set guifont=Menlo\ Regular:h13
 
 if has("unix")
