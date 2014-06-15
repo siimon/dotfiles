@@ -59,8 +59,6 @@ set nowrap
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
-autocmd BufRead *.json :set ft=javascript
-
 " use , as leader key
 let mapleader = ","
 
@@ -119,3 +117,11 @@ filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 syntax on
+
+" AutoFormat JSON
+function! FormatJSON() 
+	set filetype=json
+	:%!python -m json.tool
+endfunction
+
+nmap <leader>q :execute FormatJSON()<CR>
