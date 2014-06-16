@@ -23,6 +23,7 @@ if has("win32")
   cd C:\Users\SIMON
 endif
 
+let &t_Co=256
 set encoding=utf-8
 set fileencoding=utf-8
 
