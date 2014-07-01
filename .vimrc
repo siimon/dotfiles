@@ -14,7 +14,8 @@ set softtabstop=2
 
 let g:solarized_termcolors=256
 let g:solarized_diffmode="high"
-color Tomorrow-Night-Bright
+let &t_Co=256
+color grb256
 set background=dark
 set ignorecase
 set laststatus=2
@@ -23,7 +24,6 @@ if has("win32")
   cd C:\Users\SIMON
 endif
 
-let &t_Co=256
 set encoding=utf-8
 set fileencoding=utf-8
 
