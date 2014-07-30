@@ -26,7 +26,7 @@ endif
 set encoding=utf-8
 set fileencoding=utf-8
 
-set guifont=Menlo\ Regular:h13
+set guifont=Menlo\ Regular:h12
 
 if has("unix")
   let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
@@ -62,8 +62,9 @@ nmap <leader>l :set list!<CR>
 " use , as leader key
 let mapleader = ","
 
-" use leader-g to open ctrlp
-map <leader>g :CtrlP<CR>
+" use leader-f to open ctrlp
+map <leader>f :CtrlP<CR>
+map <leader>e :Tagbar<CR>
 
 " lw to use selected word in ctrlp
 nmap <leader>lw :CtrlP<CR><C-\>w
@@ -71,7 +72,6 @@ vmap <leader>lw y:CtrlP<CR><C-\>c
 
 map <leader>s :Ag 
 map <leader>d :NERDTreeToggle<CR>
-map <leader>f :NERDTreeFind<CR>
 
 " ignore node_modules directory
 set wildignore+=*/node_modules/*
