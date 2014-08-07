@@ -126,3 +126,10 @@ function! FormatJSON()
 endfunction
 
 nmap <leader>q :execute FormatJSON()<CR>
+
+nmap ö [
+nmap ä ]
+omap ö [
+omap ä ]
+xmap ö [
+xmap ä ]
