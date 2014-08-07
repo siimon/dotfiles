@@ -111,6 +111,8 @@ set hidden
 nmap <silent> <leader>w :set spell!<CR>
 set spelllang=en_us
 
+" previewheight, used by GStatus
+set previewheight=25
 
 " vim-golang settings
 filetype off
@@ -127,6 +129,7 @@ endfunction
 
 nmap <leader>q :execute FormatJSON()<CR>
 
+" Change default [ ] to ää, mostly used by unimpaired
 nmap ö [
 nmap ä ]
 omap ö [
