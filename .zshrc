@@ -63,13 +63,13 @@ if tput setaf 1 &> /dev/null; then
 	tput sgr0
 	if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
 		MAGENTA=$(tput setaf 9)
-		ORANGE=$(tput setaf 172)
-		GREEN=$(tput setaf 190)
+		ORANGE=$(tput setaf 214)
+		GREEN=$(tput setaf 118)
 		PURPLE=$(tput setaf 141)
 		WHITE=$(tput setaf 0)
-    LIGHT_GREEN=$(tput setaf 120)
+    LIGHT_GREEN=$(tput setaf 154)
     YELLOW=$(tput setaf 226)
-    RED=$(tput setaf 196)
+    RED=$(tput setaf 1)
   else
 		MAGENTA=$(tput setaf 5)
 		ORANGE=$(tput setaf 4)
@@ -105,7 +105,7 @@ export RED
 
 
 # All of my git variables.
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{${YELLOW}%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" on %{${ORANGE}%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{${RED}%}!"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{${RED}%}?"
