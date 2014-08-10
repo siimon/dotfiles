@@ -37,7 +37,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew osx node npm pip bower)
+plugins=(git brew osx node npm tmux bower urltools)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -144,3 +144,7 @@ done )
 export NODE_PATH=.
 
 source ~/.zsh_private
+
+# vi-mode
+bindkey -v
+
