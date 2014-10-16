@@ -15,7 +15,7 @@ set softtabstop=2
 let g:solarized_termcolors=256
 let g:solarized_diffmode="high"
 let &t_Co=256
-color molokai
+color blink
 set background=dark
 set ignorecase
 set laststatus=2
