@@ -15,7 +15,8 @@ set softtabstop=2
 let g:solarized_termcolors=256
 let g:solarized_diffmode="high"
 let &t_Co=256
-color molokai
+" used together with base16-google-dark.256
+color grb256
 set background=dark
 set ignorecase
 set laststatus=2
