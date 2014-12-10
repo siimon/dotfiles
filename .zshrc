@@ -144,7 +144,3 @@ done )
 export NODE_PATH=.
 
 source ~/.zsh_private
-
-# vi-mode
-bindkey -v
-

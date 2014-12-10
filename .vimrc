@@ -15,7 +15,9 @@ set softtabstop=2
 let g:solarized_termcolors=256
 let g:solarized_diffmode="high"
 let &t_Co=256
-color blink
+
+" used together with base16-google-dark.256
+color grb256
 set background=dark
 set ignorecase
 set laststatus=2
@@ -65,13 +67,19 @@ let mapleader = ","
 
 " use leader-f to open ctrlp
 map <leader>f :CtrlP<CR>
-map <leader>e :Tagbar<CR>
+
+" use leader-t to set current filename in ctrlp
+nmap <expr> <leader>t ':CtrlP<CR>'.expand('%:t:r')
+
+nmap <leader>g :CtrlPLine<CR>
+nmap <leader>c :CtrlPChangeAll<CR>
+nmap <leader>b :CtrlPBuffer<CR>
 
 " lw to use selected word in ctrlp
 nmap <leader>lw :CtrlP<CR><C-\>w
 vmap <leader>lw y:CtrlP<CR><C-\>c
 
-map <leader>s :Ag 
+map <leader>s :b#<CR>
 map <leader>d :NERDTreeToggle<CR>
 
 " ignore node_modules directory
@@ -129,10 +137,12 @@ endfunction
 
 nmap <leader>q :execute FormatJSON()<CR>
 
+let g:syntastic_javascript_checkers = ['eslint']
+
 " Change default [ ] to ää, mostly used by unimpaired
-nmap ö [
-nmap ä ]
-omap ö [
-omap ä ]
-xmap ö [
-xmap ä ]
+nmap å [
+nmap ¨ ]
+omap å [
+omap ¨ ]
+xmap å [
+xmap ¨ ]
