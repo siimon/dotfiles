@@ -138,6 +138,11 @@ nmap <leader>q :execute FormatJSON()<CR>
 
 let g:syntastic_javascript_checkers = ['eslint']
 
+" Check syntax when opening buffer
+let g:syntastic_check_on_open=1
+
+let g:syntastic_always_populate_loc_list = 1
+
 " Change default [ ] to ää, mostly used by unimpaired
 nmap å [
 nmap ¨ ]
