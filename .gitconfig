@@ -1,6 +1,6 @@
 [user]
-	name = Simon Eriksson
-	email = k.simon.eriksson@gmail.com
+	name = Simon Nyberg
+	email = simon@nyberg.io
 [alias]
 	ci = commit
 	co = checkout
@@ -23,3 +23,9 @@
   default = simple
 [diff]
 	tool = vimdiff
+[pull]
+	rebase = true
+[rebase]
+	autosquash = true
+[include]
+	path = .gitconfig.local
