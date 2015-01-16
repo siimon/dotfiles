@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="geoffgarside"
+#ZSH_THEME="agnoster"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -45,77 +45,6 @@ source $ZSH/oh-my-zsh.sh
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/share/npm/bin/:/usr/local/go/bin/:~/.gopath/bin
 export GOPATH=~/.gopath
 
-# Determine what character to use in place of the '$' for my prompt.
-function repo_char {
-    git branch >/dev/null 2>/dev/null && echo '☿' && return
-    echo '○'
-}
-
-# Display any virtual env stuff with python.
-function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
-}
-
-
-
-
-if tput setaf 1 &> /dev/null; then
-	tput sgr0
-	if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
-		MAGENTA=$(tput setaf 9)
-		ORANGE=$(tput setaf 214)
-		GREEN=$(tput setaf 118)
-		PURPLE=$(tput setaf 141)
-		WHITE=$(tput setaf 0)
-    LIGHT_GREEN=$(tput setaf 154)
-    YELLOW=$(tput setaf 226)
-    RED=$(tput setaf 1)
-  else
-		MAGENTA=$(tput setaf 5)
-		ORANGE=$(tput setaf 4)
-		GREEN=$(tput setaf 2)
-		PURPLE=$(tput setaf 1)
-		WHITE=$(tput setaf 7)
-    LIGHT_GREEN=$(tput setaf 2)
-    YELLOW=$(tput setaf 3)
-    RED=$(tput setaf 1)
-	fi
-	BOLD=$(tput bold)
-	RESET=$(tput sgr0)
-else
-	MAGENTA="\033[1;31m"
-	ORANGE="\033[1;33m"
-	GREEN="\033[1;32m"
-	PURPLE="\033[1;35m"
-	WHITE="\033[1;37m"
-	BOLD=""
-	RESET="\033[m"
-fi
-
-export MAGENTA
-export ORANGE
-export GREEN
-export PURPLE
-export WHITE
-export BOLD
-export RESET
-export YELLOW
-export LIGHT_GREEN
-export RED
-
-
-# All of my git variables.
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{${ORANGE}%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{${RED}%}!"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{${RED}%}?"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-
-# I like a new line between my result and the next prompt.  Makes it easier to see
-PROMPT='
-%{${LIGHT_GREEN}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)
-$(virtualenv_info)> '
-
 # Use Z-zsh, https://github.com/sjl/z-zsh
 . ~/code/dotfiles/zsh/z-zsh/z.sh
 function precmd(){
@@ -144,3 +73,161 @@ done )
 export NODE_PATH=.
 
 source ~/.zsh_private
+
+
+### Segment drawing
+# A few utility functions to make it easy and re-usable to draw segmented prompts
+
+CURRENT_BG='NONE'
+SEGMENT_SEPARATOR=''
+
+# Begin a segment
+# Takes two arguments, background and foreground. Both can be omitted,
+# rendering default background/foreground.
+prompt_segment() {
+  local bg fg
+  [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
+  [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
+  if [[ $CURRENT_BG != 'NONE' && $1 != $CURRENT_BG ]]; then
+    echo -n " %{$bg%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%{$fg%} "
+  else
+    echo -n "%{$bg%}%{$fg%} "
+  fi
+  CURRENT_BG=$1
+  [[ -n $3 ]] && echo -n $3
+}
+
+# End the prompt, closing any open segments
+prompt_end() {
+  if [[ -n $CURRENT_BG ]]; then
+    echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
+  else
+    echo -n "%{%k%}"
+  fi
+  echo -n "%{%f%}"
+  CURRENT_BG=''
+}
+
+### Prompt components
+# Each component will draw itself, and hide itself if no information needs to be shown
+
+# Context: user@hostname (who am I and where am I)
+prompt_context() {
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
+  fi
+}
+
+# Git: branch/detached head, dirty status
+prompt_git() {
+  local ref dirty mode repo_path
+  repo_path=$(git rev-parse --git-dir 2>/dev/null)
+
+  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
+    dirty=$(parse_git_dirty)
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
+    if [[ -n $dirty ]]; then
+      prompt_segment yellow black
+    else
+      prompt_segment green black
+    fi
+
+    if [[ -e "${repo_path}/BISECT_LOG" ]]; then
+      mode=" <B>"
+    elif [[ -e "${repo_path}/MERGE_HEAD" ]]; then
+      mode=" >M<"
+    elif [[ -e "${repo_path}/rebase" || -e "${repo_path}/rebase-apply" || -e "${repo_path}/rebase-merge" || -e "${repo_path}/../.dotest" ]]; then
+      mode=" >R>"
+    fi
+
+    setopt promptsubst
+    autoload -Uz vcs_info
+
+    zstyle ':vcs_info:*' enable git
+    zstyle ':vcs_info:*' get-revision true
+    zstyle ':vcs_info:*' check-for-changes true
+    zstyle ':vcs_info:*' stagedstr '✚'
+    zstyle ':vcs_info:git:*' unstagedstr '●'
+    zstyle ':vcs_info:*' formats ' %u%c'
+    zstyle ':vcs_info:*' actionformats ' %u%c'
+    vcs_info
+    echo -n "${ref/refs\/heads\// }${vcs_info_msg_0_%% }${mode}"
+  fi
+}
+
+prompt_hg() {
+  local rev status
+  if $(hg id >/dev/null 2>&1); then
+    if $(hg prompt >/dev/null 2>&1); then
+      if [[ $(hg prompt "{status|unknown}") = "?" ]]; then
+        # if files are not added
+        prompt_segment red white
+        st='±'
+      elif [[ -n $(hg prompt "{status|modified}") ]]; then
+        # if any modification
+        prompt_segment yellow black
+        st='±'
+      else
+        # if working copy is clean
+        prompt_segment green black
+      fi
+      echo -n $(hg prompt "☿ {rev}@{branch}") $st
+    else
+      st=""
+      rev=$(hg id -n 2>/dev/null | sed 's/[^-0-9]//g')
+      branch=$(hg id -b 2>/dev/null)
+      if `hg st | grep -q "^\?"`; then
+        prompt_segment red black
+        st='±'
+      elif `hg st | grep -q "^(M|A)"`; then
+        prompt_segment yellow black
+        st='±'
+      else
+        prompt_segment green black
+      fi
+      echo -n "☿ $rev@$branch" $st
+    fi
+  fi
+}
+
+# Dir: current working directory
+prompt_dir() {
+  prompt_segment blue black '%~'
+}
+
+# Virtualenv: current working virtualenv
+prompt_virtualenv() {
+  local virtualenv_path="$VIRTUAL_ENV"
+  if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
+    prompt_segment blue black "(`basename $virtualenv_path`)"
+  fi
+}
+
+# Status:
+# - was there an error
+# - am I root
+# - are there background jobs?
+prompt_status() {
+  local symbols
+  symbols=()
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
+  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
+
+  [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
+}
+
+## Main prompt
+build_prompt() {
+  RETVAL=$?
+  prompt_status
+  prompt_virtualenv
+  prompt_dir
+  prompt_git
+  prompt_hg
+  prompt_end
+}
+
+PROMPT='%{%f%b%k%}$(build_prompt) 
+> '
+
