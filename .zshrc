@@ -13,6 +13,7 @@ ZSH=$HOME/.oh-my-zsh
 alias c="cd ~/code/"
 alias doc="cd ~/Documents/"
 alias we="~/code/ansiweather/ansiweather"
+alias vim="mvim -v"
 
 # TODO.TXT Settings, https://github.com/ginatrapani/todo.txt-cli
 export TODOTXT_DEFAULT_ACTION=ls
@@ -231,3 +232,5 @@ build_prompt() {
 PROMPT='%{%f%b%k%}$(build_prompt) 
 > '
 
+BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL

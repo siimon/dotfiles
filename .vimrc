@@ -12,11 +12,12 @@ set softtabstop=2
 "set expandtab
 "set smarttab
 
+let base16colorspace=256
 let g:solarized_termcolors=256
 let g:solarized_diffmode="high"
 
-" used together with spacegray.itermcolors
-color spacegray
+" theme is set by the zsh config instead
+color base16-default
 
 set ignorecase
 set laststatus=2
@@ -67,9 +68,6 @@ let mapleader = ","
 " use leader-f to open ctrlp
 map <leader>f :CtrlP<CR>
 
-" use leader-t to set current filename in ctrlp
-nmap <expr> <leader>t ':CtrlP<CR>'.expand('%:t:r')
-
 nmap <leader>g :CtrlPLine<CR>
 nmap <leader>c :CtrlPChangeAll<CR>
 nmap <leader>b :CtrlPBuffer<CR>
@@ -117,6 +115,9 @@ set hidden
 " spell checking
 nmap <silent> <leader>w :set spell!<CR>
 set spelllang=en_us
+
+" run make test
+nmap <leader>t :Make test<CR>
 
 " previewheight, used by GStatus
 set previewheight=25
