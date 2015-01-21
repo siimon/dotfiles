@@ -16,6 +16,7 @@ let base16colorspace=256
 let g:solarized_termcolors=256
 let g:solarized_diffmode="high"
 
+set background=dark
 " theme is set by the zsh config instead
 color base16-default
 
