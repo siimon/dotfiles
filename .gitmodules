@@ -82,3 +82,12 @@
 [submodule "fonts/powerline-fonts"]
 	path = fonts/powerline-fonts
 	url = git@github.com:powerline/fonts.git
+[submodule ".vim/bundle/vim-sexp-mappings-for-regular-people"]
+	path = .vim/bundle/vim-sexp-mappings-for-regular-people
+	url = git://github.com/tpope/vim-sexp-mappings-for-regular-people.git
+[submodule ".vim/bundle/vim-sexp"]
+	path = .vim/bundle/vim-sexp
+	url = git://github.com/guns/vim-sexp.git
+[submodule ".vim/bundle/vim-repeat"]
+	path = .vim/bundle/vim-repeat
+	url = git://github.com/tpope/vim-repeat.git
