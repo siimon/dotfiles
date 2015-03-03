@@ -29,3 +29,5 @@
 	autosquash = true
 [include]
 	path = .gitconfig.local
+[init]
+	templatedir = /Users/simon/.git-templates
