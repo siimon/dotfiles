@@ -59,7 +59,6 @@ nnoremap Y y$
 " don't wrap lines that are too long
 set nowrap
 
-
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
@@ -68,6 +67,14 @@ let mapleader = ","
 
 " use leader-f to open ctrlp
 map <leader>f :CtrlP<CR>
+
+" resize window to 40
+map <leader>ww :res 40<CR>
+map <leader>we :res 10<CR><C-w>w
+
+map <leader>tu :Make test-unit<CR>
+map <leader>ts :Make test-system<CR>
+map <leader>ta :Make test<CR>
 
 nmap <leader>g :CtrlPLine<CR>
 nmap <leader>c :CtrlPChangeAll<CR>
@@ -113,12 +120,7 @@ vmap <C-p> "_dP
 " allow switching away from buffers that have changes
 set hidden
 
-" spell checking
-nmap <silent> <leader>w :set spell!<CR>
 set spelllang=en_us
-
-" run make test
-nmap <leader>t :Make test<CR>
 
 " previewheight, used by GStatus
 set previewheight=25
@@ -156,11 +158,3 @@ let g:syntastic_check_on_open=1
 let g:syntastic_auto_loc_list = 1
 
 let g:syntastic_always_populate_loc_list = 1
-
-" Change default [ ] to ää, mostly used by unimpaired
-nmap å [
-nmap ¨ ]
-omap å [
-omap ¨ ]
-xmap å [
-xmap ¨ ]
