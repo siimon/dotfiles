@@ -138,6 +138,12 @@ endfunction
 
 nmap <leader>q :execute FormatJSON()<CR>
 
+" Use CTRL+hjkl to navigate windows
+nmap <C-h> <C-w>h
+nmap <C-k> <C-w>k
+nmap <C-j> <C-w>j
+nmap <C-l> <C-w>l
+
 let g:syntastic_javascript_checkers = ['eslint']
 
 " Check syntax when opening buffer
