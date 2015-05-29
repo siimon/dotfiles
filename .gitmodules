@@ -91,3 +91,6 @@
 [submodule ".vim/bundle/vim-leiningen"]
 	path = .vim/bundle/vim-leiningen
 	url = git://github.com/tpope/vim-leiningen.git
+[submodule ".vim/bundle/gulp-vim"]
+	path = .vim/bundle/gulp-vim
+	url = https://github.com/KabbAmine/gulp-vim.git
