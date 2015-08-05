@@ -13,7 +13,6 @@ ZSH=$HOME/.oh-my-zsh
 alias c="cd ~/code/"
 alias doc="cd ~/Documents/"
 alias we="~/code/ansiweather/ansiweather"
-alias vim="mvim -v"
 
 # TODO.TXT Settings, https://github.com/ginatrapani/todo.txt-cli
 export TODOTXT_DEFAULT_ACTION=ls
