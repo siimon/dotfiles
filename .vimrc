@@ -158,3 +158,6 @@ let g:syntastic_check_on_open=1
 let g:syntastic_auto_loc_list = 1
 
 let g:syntastic_always_populate_loc_list = 1
+
+" Dont auto insert closing brackets etc in clj files
+let g:sexp_enable_insert_mode_mappings = 0
