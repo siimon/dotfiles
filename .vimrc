@@ -151,13 +151,11 @@ nmap <silent> <leader>dd <Plug>DashSearch
 
 let g:syntastic_javascript_checkers = ['eslint']
 
-" Check syntax when opening buffer
-let g:syntastic_check_on_open=1
-
-" Open loc list if errors exist
+"
+" " Open loc list if errors exist
 let g:syntastic_auto_loc_list = 1
-
+"
 let g:syntastic_always_populate_loc_list = 1
-
+"
 " Dont auto insert closing brackets etc in clj files
 let g:sexp_enable_insert_mode_mappings = 0
