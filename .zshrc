@@ -13,6 +13,7 @@ ZSH=$HOME/.oh-my-zsh
 alias c="cd ~/code/"
 alias doc="cd ~/Documents/"
 alias we="~/code/ansiweather/ansiweather"
+alias d="docker"
 
 # TODO.TXT Settings, https://github.com/ginatrapani/todo.txt-cli
 export TODOTXT_DEFAULT_ACTION=ls
@@ -37,7 +38,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew osx node npm tmux bower urltools docker docker-compose)
+plugins=(git brew osx node npm tmux urltools docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
