@@ -159,3 +159,10 @@ let g:syntastic_always_populate_loc_list = 1
 "
 " Dont auto insert closing brackets etc in clj files
 let g:sexp_enable_insert_mode_mappings = 0
+
+if exists(":Tabularize")
+	nmap <Leader>w= :Tabularize /=<CR>
+	vmap <Leader>w= :Tabularize /=<CR>
+	nmap <Leader>w: :Tabularize /:\zs<CR>
+	vmap <Leader>w: :Tabularize /:\zs<CR>
+endif
