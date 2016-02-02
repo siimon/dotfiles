@@ -68,10 +68,6 @@ let mapleader = ","
 " use leader-f to open ctrlp
 map <leader>f :CtrlP<CR>
 
-" resize window to 40
-map <leader>ww :res 40<CR>
-map <leader>we :res 10<CR><C-w>w
-
 map <leader>tu :Make test-unit<CR>
 map <leader>ts :Make test-system<CR>
 map <leader>ta :Make test<CR>
