@@ -46,9 +46,6 @@
 [submodule ".vim/bundle/vim-go"]
 	path = .vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
-[submodule ".vim/bundle/vim-colorschemes"]
-	path = .vim/bundle/vim-colorschemes
-	url = https://github.com/flazz/vim-colorschemes.git
 [submodule ".vim/bundle/vim-dispatch"]
 	path = .vim/bundle/vim-dispatch
 	url = git@github.com:tpope/vim-dispatch.git
@@ -76,21 +73,12 @@
 [submodule ".vim/bundle/vim-eunuch"]
 	path = .vim/bundle/vim-eunuch
 	url = git@github.com:tpope/vim-eunuch.git
-[submodule ".vim/bundle/dash.vim"]
-	path = .vim/bundle/dash.vim
-	url = https://github.com/rizzatti/dash.vim.git
-[submodule ".vim/bundle/funcoo.vim"]
-	path = .vim/bundle/funcoo.vim
-	url = https://github.com/rizzatti/funcoo.vim.git
 [submodule ".vim/bundle/vim-fireplace"]
 	path = .vim/bundle/vim-fireplace
 	url = git://github.com/tpope/vim-fireplace.git
 [submodule ".vim/bundle/vim-leiningen"]
 	path = .vim/bundle/vim-leiningen
 	url = git://github.com/tpope/vim-leiningen.git
-[submodule ".vim/bundle/gulp-vim"]
-	path = .vim/bundle/gulp-vim
-	url = https://github.com/KabbAmine/gulp-vim.git
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
