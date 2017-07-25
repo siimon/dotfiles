@@ -1,0 +1,34 @@
+cask_args appdir: "/Applications"
+tap "caskroom/cask"
+tap "caskroom/fonts"
+
+brew "git"
+brew "zsh"
+brew "vim", args: ["with-python3"]
+brew "tmux"
+brew "ag"
+brew "http"
+brew "z"
+brew "node"
+brew "go"
+brew "redis"
+brew "tree"
+brew "openssl"
+
+cask "iterm2"
+cask "google-chrome"
+cask "spotify"
+cask "docker"
+cask "visual-studio-code"
+cask "alfred"
+cask "dash"
+cask "1password"
+cask "dropbox"
+cask "divvy"
+cask "vlc"
+cask "font-source-code-pro"
+
+mas "tweetbot", id: 557168941
+mas "soulver", id: 413965349
+mas "xcode", id: 497799835
+
