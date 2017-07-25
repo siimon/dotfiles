@@ -8,9 +8,6 @@ fi
 #brew update
 brew tap Homebrew/bundle
 
-# install mac app store cli - needed for some bundle apps
-brew install mas
-
 # install all apps from Brewfile
 brew bundle
 

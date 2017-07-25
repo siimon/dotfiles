@@ -2,6 +2,7 @@ cask_args appdir: "/Applications"
 tap "caskroom/cask"
 tap "caskroom/fonts"
 
+brew "mas"
 brew "git"
 brew "zsh"
 brew "vim", args: ["with-python3"]
@@ -26,9 +27,12 @@ cask "1password"
 cask "dropbox"
 cask "divvy"
 cask "vlc"
+cask "virtualbox"
+cask "charles"
 cask "font-source-code-pro"
 
 mas "tweetbot", id: 557168941
 mas "soulver", id: 413965349
+mas "slack", id: 803453959
 mas "xcode", id: 497799835
 
