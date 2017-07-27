@@ -80,7 +80,7 @@ nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>lw :CtrlP<CR><C-\>w
 vmap <leader>lw y:CtrlP<CR><C-\>c
 
-map <leader>s :b#<CR>
+map <leader>s :b#<CR>:SignifyRefresh<CR>
 map <leader>d :NERDTreeToggle<CR>
 
 " ignore node_modules directory
@@ -142,17 +142,12 @@ nmap <C-k> <C-w>k
 nmap <C-j> <C-w>j
 nmap <C-l> <C-w>l
 
-" Open dash on selected word
-nmap <silent> <leader>dd <Plug>DashSearch
-
 let g:syntastic_javascript_checkers = ['eslint']
 
-"
-" " Open loc list if errors exist
-let g:syntastic_auto_loc_list = 1
-"
+" Open loc list if errors exist
 let g:syntastic_always_populate_loc_list = 1
-"
+let g:syntastic_check_on_wq = 0
+
 " Dont auto insert closing brackets etc in clj files
 let g:sexp_enable_insert_mode_mappings = 0
 
