@@ -16,6 +16,7 @@ brew "carthage"
 brew "redis"
 brew "tree"
 brew "openssl"
+brew "diff-so-fancy"
 
 cask "iterm2"
 cask "google-chrome"
