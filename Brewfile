@@ -31,6 +31,8 @@ cask "divvy"
 cask "vlc"
 cask "virtualbox"
 cask "charles"
+cask "postman"
+cask "tower"
 cask "font-source-code-pro"
 
 mas "tweetbot", id: 557168941
