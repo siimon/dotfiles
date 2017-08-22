@@ -8,7 +8,7 @@ brew "zsh"
 brew "vim", args: ["with-python3"]
 brew "tmux"
 brew "ag"
-brew "http"
+brew "httpie"
 brew "z"
 brew "node"
 brew "go"
