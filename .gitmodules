@@ -85,3 +85,9 @@
 [submodule ".vim/bundle/vimux"]
 	path = .vim/bundle/vimux
 	url = git@github.com:benmills/vimux.git
+[submodule ".vim/bundle/swift.vim"]
+	path = .vim/bundle/swift.vim
+	url = git@github.com:keith/swift.vim.git
+[submodule ".vim/bundle/fzf.vim"]
+	path = .vim/bundle/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git
