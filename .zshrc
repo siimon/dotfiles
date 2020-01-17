@@ -1,10 +1,3 @@
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-	autoload -U compinit && compinit
-	zmodload -i zsh/complist
-	rm -f ~/.zcompdump
-fi
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 

@@ -1,4 +1,5 @@
 execute pathogen#infect()
+execute pathogen#helptags()
 set shiftwidth=2
 set tabstop=2
 
@@ -10,7 +11,7 @@ set softtabstop=2
 " use spaces
 "set autoindent
 "set expandtab
-set smarttab
+"set smarttab
 
 let base16colorspace=256
 let g:solarized_termcolors=256
@@ -69,10 +70,6 @@ nmap <leader>b :Buffer<CR>
 map <leader>tu :Make test-unit<CR>
 map <leader>ts :Make test-system<CR>
 map <leader>ta :Make test<CR>
-
-" lw to use selected word in fzf
-nmap <leader>lw :Files<CR><C-\>w
-vmap <leader>lw y:Files<CR><C-\>c
 
 map <leader>s :b#<CR>:SignifyRefresh<CR>
 map <leader>d :NERDTreeToggle<CR>
@@ -136,17 +133,12 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_wq = 0
 
-" Dont auto insert closing brackets etc in clj files
-let g:sexp_enable_insert_mode_mappings = 0
-
 if exists(":Tabularize")
 	nmap <Leader>w= :Tabularize /=<CR>
 	vmap <Leader>w= :Tabularize /=<CR>
 	nmap <Leader>w: :Tabularize /:\zs<CR>
 	vmap <Leader>w: :Tabularize /:\zs<CR>
 endif
-
-let g:merginal_windowWidth = 150
 
 " Setup fzf
 set rtp+=/usr/local/opt/fzf
