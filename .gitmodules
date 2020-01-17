@@ -43,45 +43,24 @@
 [submodule ".vim/bundle/vim-tbone"]
 	path = .vim/bundle/vim-tbone
 	url = https://github.com/tpope/vim-tbone.git
-[submodule ".vim/bundle/vim-go"]
-	path = .vim/bundle/vim-go
-	url = https://github.com/fatih/vim-go.git
 [submodule ".vim/bundle/vim-dispatch"]
 	path = .vim/bundle/vim-dispatch
 	url = git@github.com:tpope/vim-dispatch.git
-[submodule ".vim/bundle/base16-vim"]
-	path = .vim/bundle/base16-vim
-	url = https://github.com/chriskempson/base16-vim.git
 [submodule ".config/base16-shell"]
 	path = .config/base16-shell
 	url = git@github.com:chriskempson/base16-shell.git
 [submodule "fonts/powerline-fonts"]
 	path = fonts/powerline-fonts
 	url = git@github.com:powerline/fonts.git
-[submodule ".vim/bundle/vim-sexp-mappings-for-regular-people"]
-	path = .vim/bundle/vim-sexp-mappings-for-regular-people
-	url = git://github.com/tpope/vim-sexp-mappings-for-regular-people.git
-[submodule ".vim/bundle/vim-sexp"]
-	path = .vim/bundle/vim-sexp
-	url = git://github.com/guns/vim-sexp.git
 [submodule ".vim/bundle/vim-repeat"]
 	path = .vim/bundle/vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
 [submodule ".vim/bundle/vim-commentary"]
 	path = .vim/bundle/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
-[submodule ".vim/bundle/vim-eunuch"]
-	path = .vim/bundle/vim-eunuch
-	url = git@github.com:tpope/vim-eunuch.git
 [submodule ".vim/bundle/vim-fireplace"]
 	path = .vim/bundle/vim-fireplace
 	url = git://github.com/tpope/vim-fireplace.git
-[submodule ".vim/bundle/vim-leiningen"]
-	path = .vim/bundle/vim-leiningen
-	url = git://github.com/tpope/vim-leiningen.git
-[submodule ".vim/bundle/tabular"]
-	path = .vim/bundle/tabular
-	url = git://github.com/godlygeek/tabular.git
 [submodule ".vim/bundle/vim-easymotion"]
 	path = .vim/bundle/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion
@@ -100,3 +79,9 @@
 [submodule ".vim/bundle/editorconfig-vim"]
 	path = .vim/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule ".vim/bundle/vim-yaml"]
+	path = .vim/bundle/vim-yaml
+	url = https://github.com/stephpy/vim-yaml
+[submodule ".vim/bundle/vimux"]
+	path = .vim/bundle/vimux
+	url = git@github.com:benmills/vimux.git

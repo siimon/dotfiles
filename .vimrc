@@ -1,8 +1,8 @@
-call pathogen#infect()
-call pathogen#helptags()
-
+execute pathogen#infect()
 set shiftwidth=2
 set tabstop=2
+
+set cindent
 
 " use tabs
 set softtabstop=2
@@ -10,38 +10,34 @@ set softtabstop=2
 " use spaces
 "set autoindent
 "set expandtab
-"set smarttab
+set smarttab
 
 let base16colorspace=256
 let g:solarized_termcolors=256
 let g:solarized_diffmode="high"
 
 set background=dark
-" theme is set by the zsh config instead
-color base16-default
+color kkruby
 
 set ignorecase
 set laststatus=2
 
-if has("win32")
-  cd C:\Users\SIMON
-endif
-
 set encoding=utf-8
 set fileencoding=utf-8
 
-set guifont=Menlo\ Regular:h12
-
-if has("unix")
-  let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-endif
+set backspace=indent,eol,start
 
 " Exit vim if NERDTree is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-
 " Syntax Highlighting on
 set nocompatible
+syntax on
+syntax enable
+filetype on
+
+" Remove background color for sign column (git status etc)
+highlight clear SignColumn
 
 " Disable bell.
 set vb t_vb=
@@ -65,29 +61,28 @@ nmap <leader>l :set list!<CR>
 " use , as leader key
 let mapleader = ","
 
-" use leader-f to open ctrlp
-map <leader>f :CtrlP<CR>
+
+map <leader>f :Files<CR>
+nmap <leader>m :Marks<CR>
+nmap <leader>b :Buffer<CR>
 
 map <leader>tu :Make test-unit<CR>
 map <leader>ts :Make test-system<CR>
 map <leader>ta :Make test<CR>
 
-nmap <leader>g :CtrlPLine<CR>
-nmap <leader>c :CtrlPChangeAll<CR>
-nmap <leader>b :CtrlPBuffer<CR>
-
-" lw to use selected word in ctrlp
-nmap <leader>lw :CtrlP<CR><C-\>w
-vmap <leader>lw y:CtrlP<CR><C-\>c
+" lw to use selected word in fzf
+nmap <leader>lw :Files<CR><C-\>w
+vmap <leader>lw y:Files<CR><C-\>c
 
 map <leader>s :b#<CR>:SignifyRefresh<CR>
 map <leader>d :NERDTreeToggle<CR>
 
-" ignore node_modules directory
-set wildignore+=*/node_modules/*
-set wildignore+=*/dist/*
-set wildignore+=*/bower_components/*
+map <leader>gs :Gst<CR>
 
+" ignore node_modules directory
+set wildignore =*/node_modules/*
+set wildignore =*/dist/*
+set wildignore =*/bower_components/*
 
 set nobackup
 set noswapfile
@@ -121,13 +116,6 @@ set spelllang=en_us
 " previewheight, used by GStatus
 set previewheight=25
 
-" vim-golang settings
-filetype off
-filetype plugin indent off
-set runtimepath+=$GOROOT/misc/vim
-filetype plugin indent on
-syntax on
-
 " AutoFormat JSON
 function! FormatJSON() 
 	set filetype=json
@@ -136,7 +124,7 @@ endfunction
 
 nmap <leader>q :execute FormatJSON()<CR>
 
-" Use CTRL+hjkl to navigate windows
+" Use CTRL hjkl to navigate windows
 nmap <C-h> <C-w>h
 nmap <C-k> <C-w>k
 nmap <C-j> <C-w>j
@@ -157,3 +145,8 @@ if exists(":Tabularize")
 	nmap <Leader>w: :Tabularize /:\zs<CR>
 	vmap <Leader>w: :Tabularize /:\zs<CR>
 endif
+
+let g:merginal_windowWidth = 150
+
+" Setup fzf
+set rtp+=/usr/local/opt/fzf

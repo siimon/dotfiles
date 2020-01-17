@@ -1,6 +1,8 @@
 [user]
 	name = Simon Nyberg
 	email = simon@nyberg.io
+[includeIf "gitdir:~/work/"]
+	path = ~/work/.gitconfig-work 
 [alias]
 	ci = commit
 	co = checkout
@@ -24,8 +26,6 @@
   default = simple
 [diff]
 	tool = vimdiff
-[pull]
-	rebase = true
 [rebase]
 	autosquash = true
 [include]
@@ -39,10 +39,8 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
-[color "diff"]
-	meta = 227
-	frag = magenta bold
-	commit = 227 bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
