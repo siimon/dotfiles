@@ -75,6 +75,8 @@ map <leader>s :b#<CR>:SignifyRefresh<CR>
 map <leader>d :NERDTreeToggle<CR>
 
 map <leader>gs :Gst<CR>
+map <leader>r :VimuxPromptCommand<CR>
+map <leader>rr :VimuxRunLastCommand<CR>
 
 " ignore node_modules directory
 set wildignore =*/node_modules/*
@@ -100,10 +102,6 @@ map <leader>a :split #<CR>
 " Maps for jj to act as Esc
 ino jj <esc>
 cno jj <c-c>
-
-" Replace current line with buffer contents via ctrl-p
-nmap <C-p> "_ddP
-vmap <C-p> "_dP
 
 " allow switching away from buffers that have changes
 set hidden
