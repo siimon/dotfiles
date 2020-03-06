@@ -7,45 +7,27 @@
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule ".vim/bundle/vim-markdown"]
-	path = .vim/bundle/vim-markdown
-	url = git://github.com/tpope/vim-markdown.git
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
 [submodule "zsh/z-zsh"]
 	path = zsh/z-zsh
 	url = git://github.com/sjl/z-zsh.git
-[submodule ".vim/bundle/ctrlp.vim"]
-	path = .vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
 [submodule ".vim/bundle/ag.vim"]
 	path = .vim/bundle/ag.vim
 	url = https://github.com/rking/ag.vim.git
 [submodule ".vim/bundle/vim-node"]
 	path = .vim/bundle/vim-node
 	url = https://github.com/moll/vim-node.git
-[submodule ".vim/bundle/vim-javascript"]
-	path = .vim/bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
 [submodule ".vim/bundle/vim-signify"]
 	path = .vim/bundle/vim-signify
 	url = https://github.com/mhinz/vim-signify.git
-[submodule ".vim/bundle/vim-json"]
-	path = .vim/bundle/vim-json
-	url = https://github.com/elzr/vim-json.git
-[submodule ".vim/bundle/tmuxline.vim"]
-	path = .vim/bundle/tmuxline.vim
-	url = https://github.com/edkolev/tmuxline.vim.git
 [submodule ".vim/bundle/vim-unimpaired"]
 	path = .vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
 [submodule ".vim/bundle/vim-tbone"]
 	path = .vim/bundle/vim-tbone
 	url = https://github.com/tpope/vim-tbone.git
-[submodule ".vim/bundle/vim-dispatch"]
-	path = .vim/bundle/vim-dispatch
-	url = git@github.com:tpope/vim-dispatch.git
 [submodule ".config/base16-shell"]
 	path = .config/base16-shell
 	url = git@github.com:chriskempson/base16-shell.git
@@ -58,9 +40,6 @@
 [submodule ".vim/bundle/vim-commentary"]
 	path = .vim/bundle/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
-[submodule ".vim/bundle/vim-fireplace"]
-	path = .vim/bundle/vim-fireplace
-	url = git://github.com/tpope/vim-fireplace.git
 [submodule ".vim/bundle/vim-easymotion"]
 	path = .vim/bundle/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion
@@ -70,24 +49,15 @@
 [submodule ".vim/bundle/vim-airline-themes"]
 	path = .vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule ".vim/bundle/typescript-vim"]
-	path = .vim/bundle/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
 [submodule ".vim/bundle/vim-colorschemes"]
 	path = .vim/bundle/vim-colorschemes
 	url = https://github.com/flazz/vim-colorschemes.git
 [submodule ".vim/bundle/editorconfig-vim"]
 	path = .vim/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule ".vim/bundle/vim-yaml"]
-	path = .vim/bundle/vim-yaml
-	url = https://github.com/stephpy/vim-yaml
 [submodule ".vim/bundle/vimux"]
 	path = .vim/bundle/vimux
 	url = git@github.com:benmills/vimux.git
-[submodule ".vim/bundle/swift.vim"]
-	path = .vim/bundle/swift.vim
-	url = git@github.com:keith/swift.vim.git
 [submodule ".vim/bundle/fzf.vim"]
 	path = .vim/bundle/fzf.vim
 	url = git@github.com:junegunn/fzf.vim.git
