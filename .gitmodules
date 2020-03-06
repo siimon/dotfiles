@@ -61,3 +61,6 @@
 [submodule ".vim/bundle/fzf.vim"]
 	path = .vim/bundle/fzf.vim
 	url = git@github.com:junegunn/fzf.vim.git
+[submodule ".vim/bundle/vim-polygot"]
+	path = .vim/bundle/vim-polygot
+	url = https://github.com/sheerun/vim-polyglot.git
