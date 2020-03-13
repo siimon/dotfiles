@@ -3,14 +3,14 @@ execute pathogen#helptags()
 set shiftwidth=2
 set tabstop=2
 
-set cindent
+"set cindent
 
 " use tabs
 set softtabstop=2
 
 " use spaces
-"set autoindent
-"set expandtab
+set autoindent
+set expandtab
 "set smarttab
 
 let base16colorspace=256
@@ -21,7 +21,7 @@ set background=dark
 color kkruby
 
 set ignorecase
-set laststatus=2
+"set laststatus=2
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -130,13 +130,6 @@ let g:syntastic_javascript_checkers = ['eslint']
 " Open loc list if errors exist
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_wq = 0
-
-if exists(":Tabularize")
-	nmap <Leader>w= :Tabularize /=<CR>
-	vmap <Leader>w= :Tabularize /=<CR>
-	nmap <Leader>w: :Tabularize /:\zs<CR>
-	vmap <Leader>w: :Tabularize /:\zs<CR>
-endif
 
 " Setup fzf
 set rtp+=/usr/local/opt/fzf
