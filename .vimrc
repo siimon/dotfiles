@@ -1,4 +1,4 @@
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -14,6 +14,7 @@ Plug 'tpope/vim-surround'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-unimpaired'
 Plug 'benmills/vimux'
+Plug 'flazz/vim-colorschemes'
 call plug#end()
 
 set shiftwidth=2
