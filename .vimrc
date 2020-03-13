@@ -14,8 +14,10 @@ Plug 'tpope/vim-surround'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-unimpaired'
 Plug 'benmills/vimux'
-Plug 'flazz/vim-colorschemes'
+Plug 'chriskempson/base16-vim'
 call plug#end()
+
+let g:netrw_altv=1
 
 set shiftwidth=2
 set tabstop=2
@@ -35,7 +37,6 @@ let g:solarized_termcolors=256
 let g:solarized_diffmode="high"
 
 set background=dark
-color kkruby
 
 set ignorecase
 "set laststatus=2
@@ -86,7 +87,6 @@ map <leader>ts :Make test-system<CR>
 map <leader>ta :Make test<CR>
 
 map <leader>s :b#<CR>:SignifyRefresh<CR>
-map <leader>d :Vexplore<CR>
 
 map <leader>gs :Gst<CR>
 map <leader>r :VimuxPromptCommand<CR>
@@ -147,3 +147,27 @@ let g:syntastic_check_on_wq = 0
 
 " Setup fzf
 set rtp+=/usr/local/opt/fzf
+
+let g:NetrwIsOpen=0
+let g:netrw_winsize = 30
+let g:netrw_banner = 0
+
+" https://stackoverflow.com/questions/36363878/open-file-in-vertical-split-in-vim-netrw
+function! ToggleNetrw()
+    if g:NetrwIsOpen
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filetype") == "netrw")
+                silent exe "bwipeout " . i 
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent Lexplore
+    endif
+endfunction
+
+" Toggle netrw on leader-d
+noremap <silent> <leader>d :call ToggleNetrw()<CR>
