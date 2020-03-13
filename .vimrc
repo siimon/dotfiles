@@ -1,5 +1,21 @@
-execute pathogen#infect()
-execute pathogen#helptags()
+call plug#begin()
+Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'moll/vim-node'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-unimpaired'
+Plug 'benmills/vimux'
+call plug#end()
+
 set shiftwidth=2
 set tabstop=2
 
@@ -27,9 +43,6 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 set backspace=indent,eol,start
-
-" Exit vim if NERDTree is the only window left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Syntax Highlighting on
 set nocompatible
@@ -72,7 +85,7 @@ map <leader>ts :Make test-system<CR>
 map <leader>ta :Make test<CR>
 
 map <leader>s :b#<CR>:SignifyRefresh<CR>
-map <leader>d :NERDTreeToggle<CR>
+map <leader>d :Vexplore<CR>
 
 map <leader>gs :Gst<CR>
 map <leader>r :VimuxPromptCommand<CR>
