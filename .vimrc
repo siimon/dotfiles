@@ -15,7 +15,11 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-unimpaired'
 Plug 'benmills/vimux'
 Plug 'chriskempson/base16-vim'
+Plug 'dracula/vim', { 'name': 'dracula' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+
+nmap <silent> gd <Plug>(coc-definition)
 
 let g:netrw_altv=1
 
@@ -52,7 +56,21 @@ syntax on
 syntax enable
 filetype on
 
+" Following highlight clears might not be needed for some colorschemes and it
+" might even break some.
 " Remove background color for sign column (git status etc)
+highlight clear SignifySignAdd
+highlight clear SignifySignDelete
+
+" Remove background color when showing folded text (like Gdiff)
+highlight clear Folded
+
+" No background color when changing stuff
+highlight clear DiffChange
+highlight clear DiffAdd
+highlight clear DiffDelete
+
+" Remove background color in the SignColumn (left most column)
 highlight clear SignColumn
 
 " Disable bell.
@@ -76,7 +94,8 @@ nmap <leader>l :set list!<CR>
 
 " use , as leader key
 let mapleader = ","
-
+" and ,, as local leader
+let maplocalleader = ",,"
 
 map <leader>f :Files<CR>
 nmap <leader>m :Marks<CR>
@@ -88,7 +107,7 @@ map <leader>ta :Make test<CR>
 
 map <leader>s :b#<CR>:SignifyRefresh<CR>
 
-map <leader>gs :Gst<CR>
+map <leader>gs :Git<CR>
 map <leader>r :VimuxPromptCommand<CR>
 map <leader>rr :VimuxRunLastCommand<CR>
 
@@ -171,3 +190,6 @@ endfunction
 
 " Toggle netrw on leader-d
 noremap <silent> <leader>d :call ToggleNetrw()<CR>
+
+" Undo hunk Shift+X
+nmap <S-X> :SignifyHunkUndo<CR>
