@@ -193,3 +193,11 @@ noremap <silent> <leader>d :call ToggleNetrw()<CR>
 
 " Undo hunk Shift+X
 nmap <S-X> :SignifyHunkUndo<CR>
+
+" Confirm coc completion on <CR>
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Make <CR> select the first coc completion if prompt is visible
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+" Navigate coc completion list with <Tab> and <S-Tab>
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
