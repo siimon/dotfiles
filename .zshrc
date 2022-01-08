@@ -5,11 +5,15 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="dracula"
 DEFAULT_USER="simonnyberg"
 prompt_context(){}
+export EDITOR='vim'
 
 export LC_ALL=en_US.UTF-8
+
+# Use ripgrep as default search engine with fzf
+export FZF_DEFAULT_COMMAND='rg --files'
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -18,6 +22,8 @@ alias c="cd ~/code/"
 alias doc="cd ~/Documents/"
 alias d="docker"
 alias t="/usr/local/opt/todo-txt/bin/todo.sh"
+alias mux=tmuxinator
+alias rw="vim -c ':G'"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
