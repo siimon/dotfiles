@@ -26,8 +26,4 @@ ln -s "$path/.vim" ~/
 ln -s "$path/.vimrc" ~/
 ln -s "$path/.zshrc" ~/
 
-# # install git submodules
-git submodule init
-git submodule update
-
 ln -s "$path/U.S.\ with\ Swedish\ Characters.bundle" ~/Library/Keyboard\ Layouts/
