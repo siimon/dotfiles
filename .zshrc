@@ -48,7 +48,7 @@ plugins=(git brew osx node npm tmux urltools docker docker-compose lein)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/share/npm/bin:/usr/local/go/bin:~/.gopath/bin:~/bin
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/share/npm/bin:/usr/local/go/bin:~/.gopath/bin:~/bin:~/.cargo/bin
 export GOPATH=~/.gopath
 
 # Use Z-zsh, https://github.com/sjl/z-zsh
