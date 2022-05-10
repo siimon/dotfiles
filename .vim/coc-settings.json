@@ -1,6 +1,3 @@
-"languageserver": {
-    "sourcekit-lsp": {
-      "filetypes": ["swift"],
-      "command": "sourcekit-lsp",
-    }
-  }
+{
+  "diagnostic.displayByAle": true
+}

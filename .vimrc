@@ -1,8 +1,9 @@
+let g:ale_disable_lsp = 1
+
 call plug#begin('~/.vim/plugged')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
-Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
@@ -17,6 +18,8 @@ Plug 'benmills/vimux'
 Plug 'chriskempson/base16-vim'
 Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rust-lang/rust.vim'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 nmap <silent> gd <Plug>(coc-definition)
@@ -72,6 +75,8 @@ highlight clear DiffDelete
 
 " Remove background color in the SignColumn (left most column)
 highlight clear SignColumn
+
+hi FgCocHintFloatBgCocFloating ctermfg=0
 
 " Disable bell.
 set vb t_vb=
@@ -201,3 +206,14 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR
 " Navigate coc completion list with <Tab> and <S-Tab>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
