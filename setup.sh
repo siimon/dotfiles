@@ -2,7 +2,7 @@
 
 # install homebrew
 if ! [ -x "$(command -v brew)" ]; then
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/main/install)"
 fi
 
 #brew update
@@ -25,5 +25,6 @@ ln -s "$path/.tmux.conf" ~/
 ln -s "$path/.vim" ~/
 ln -s "$path/.vimrc" ~/
 ln -s "$path/.zshrc" ~/
+ln -s "$path/.config" ~/
 
 ln -s "$path/U.S.\ with\ Swedish\ Characters.bundle" ~/Library/Keyboard\ Layouts/

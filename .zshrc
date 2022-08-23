@@ -23,7 +23,9 @@ alias doc="cd ~/Documents/"
 alias d="docker"
 alias t="/usr/local/opt/todo-txt/bin/todo.sh"
 alias mux=tmuxinator
-alias rw="vim -c ':G'"
+alias rw="nvim -c ':G'"
+# Use NeoVim
+alias vim="nvim"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -43,7 +45,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew osx node npm tmux urltools docker docker-compose lein)
+plugins=(git brew macos node npm tmux urltools docker docker-compose lein)
 
 source $ZSH/oh-my-zsh.sh
 
