@@ -8,16 +8,20 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'moll/vim-node'
-" Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-unimpaired'
-Plug 'benmills/vimux'
 Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'rust-lang/rust.vim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'pwntester/octo.nvim'
+>>>>>>> 21fb60e (Add octo nvim)
 call plug#end()
 
 " Enable spellcheck in markdown files
@@ -85,4 +89,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 
 vim.diagnostic.config({virtual_text = false})
+
+" require'octo'.setup()
 END
