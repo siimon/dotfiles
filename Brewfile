@@ -28,4 +28,5 @@ cask "dash"
 cask "paw"
 cask "firefox"
 cask "tuple"
+cask "devutils"
 
