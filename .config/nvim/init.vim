@@ -21,7 +21,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'pwntester/octo.nvim'
->>>>>>> 21fb60e (Add octo nvim)
 call plug#end()
 
 " Enable spellcheck in markdown files
@@ -90,5 +89,5 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 
 vim.diagnostic.config({virtual_text = false})
 
-" require'octo'.setup()
+require'octo'.setup()
 END
