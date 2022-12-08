@@ -29,4 +29,4 @@ cask "paw"
 cask "firefox"
 cask "tuple"
 cask "devutils"
-
+cask "font-sauce-code-pro-nerd-font"
