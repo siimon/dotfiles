@@ -50,16 +50,11 @@ plugins=(git brew macos node npm tmux urltools docker docker-compose lein)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/share/npm/bin:/usr/local/go/bin:~/.gopath/bin:~/bin:~/.cargo/bin
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/share/npm/bin:/usr/local/go/bin:~/.gopath/bin:~/bin:~/.cargo/bin:/opt/homebrew/bin
 export GOPATH=~/.gopath
-
 # Use Z-zsh, https://github.com/sjl/z-zsh
-. /usr/local/etc/profile.d/z.sh
-function precmd(){
-  z --add "$(pwd -P)"
-}
+. /opt/homebrew/etc/profile.d/z.sh
 ctags=/usr/local/bin/ctags
-
 
 # Output all different colors that can be used in tput setaf
 aa_256 ()
@@ -80,10 +75,11 @@ PROMPT+='
 > '
 
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+ssh-add -q --apple-load-keychain

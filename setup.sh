@@ -2,7 +2,7 @@
 
 # install homebrew
 if ! [ -x "$(command -v brew)" ]; then
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/main/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 #brew update
@@ -22,8 +22,6 @@ ln -s "$path/.agignore" ~/
 ln -s "$path/.gitconfig" ~/
 ln -s "$path/.gitignore" ~/
 ln -s "$path/.tmux.conf" ~/
-ln -s "$path/.vim" ~/
-ln -s "$path/.vimrc" ~/
 ln -s "$path/.zshrc" ~/
 ln -s "$path/.config" ~/
 

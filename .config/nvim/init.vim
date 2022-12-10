@@ -79,7 +79,6 @@ require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.sourcekit.setup{}
 require'lspconfig'.tsserver.setup{}
 
-
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
  vim.lsp.diagnostic.on_publish_diagnostics, {
    -- Disable underline in diagnostics
@@ -90,4 +89,9 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 vim.diagnostic.config({virtual_text = false})
 
 require'octo'.setup()
+
+require'nvim-treesitter.configs'.setup {
+	ensure_installed = { "swift", "json", "javascript", "rust" },
+	auto_install = true
+}
 END

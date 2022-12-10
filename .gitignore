@@ -2,3 +2,5 @@
 .netrwhist
 /doc/tags
 .vim/plugged
+.config/gh/hosts.yml
+.config/iterm2/
