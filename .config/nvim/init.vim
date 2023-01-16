@@ -52,6 +52,22 @@ map <leader>h :History<CR>
 " Show fugitive git status
 map <leader>gs :Git<CR>
 
+" Octo mappings
+" list all open PR's
+map <leader>pls :Octo pr list<CR>
+
+" Start review
+map <leader>rst :Octo review start<CR>
+"Resume review
+map <leader>rre :Octo review resume<CR>
+" Submit review
+map <leader>rsu :Octo review submit<CR>
+" List all pending comments in review
+map <leader>rcls :Octo review comments<CR>
+
+" Resolve thread
+map <leader>tr :Octo thread resolve<CR>
+
 "# Colors not set in colorscheme
 
 " Remove the background color of the sign column
