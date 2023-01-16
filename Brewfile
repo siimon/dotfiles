@@ -20,6 +20,7 @@ brew "robotsandpencils/made/xcodes"
 brew "aria2"
 brew "mas"
 brew "gh"
+brew "rust-analyzer"
 
 cask "iterm2"
 cask "spotify"
