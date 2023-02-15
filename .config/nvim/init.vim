@@ -75,7 +75,7 @@ hi SignColumn ctermbg=NONE
 " Matching paren is not readable enough, set background color to purple (=141)
 hi MatchParen cterm=none ctermbg=141 ctermfg=253 
 
-hi PMenu ctermbg=61
+hi clear Pmenu
 hi DiffAdd ctermbg=238
 hi DiffChange ctermbg=238
 hi DiffDelete ctermbg=238
