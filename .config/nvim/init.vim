@@ -23,6 +23,11 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'pwntester/octo.nvim'
 call plug#end()
 
+" Colors
+color dracula
+set bg=dark
+set termguicolors
+
 " Enable spellcheck in markdown files
 augroup markdownSpell
     autocmd!
@@ -67,19 +72,6 @@ map <leader>rcls :Octo review comments<CR>
 
 " Resolve thread
 map <leader>tr :Octo thread resolve<CR>
-
-"# Colors not set in colorscheme
-
-" Remove the background color of the sign column
-hi SignColumn ctermbg=NONE
-" Matching paren is not readable enough, set background color to purple (=141)
-hi MatchParen cterm=none ctermbg=141 ctermfg=253 
-
-hi clear Pmenu
-hi DiffAdd ctermbg=238
-hi DiffChange ctermbg=238
-hi DiffDelete ctermbg=238
-hi DiffText ctermbg=234
 
 lua << END
 require('lualine').setup {
