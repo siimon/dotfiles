@@ -4,3 +4,4 @@
 .vim/plugged
 .config/gh/hosts.yml
 .config/iterm2/
+.config/github-copilot/hosts.json

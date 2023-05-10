@@ -21,12 +21,13 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'pwntester/octo.nvim'
+Plug 'github/copilot.vim'
 
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 call plug#end()
 
-let g:coq_settings = { 'auto_start': v:true }
+let g:coq_settings = { 'auto_start': 'shut-up' }
 
 " Colors
 color dracula
@@ -58,7 +59,7 @@ map <leader>gs :Git<CR>
 
 " Octo mappings
 " list all open PR's
-map <leader>pls :Octo pr list<CR>
+map <leader>p :Octo pr list<CR>
 
 " Start review
 map <leader>rst :Octo review start<CR>
@@ -71,6 +72,9 @@ map <leader>rcls :Octo review comments<CR>
 
 " Resolve thread
 map <leader>tr :Octo thread resolve<CR>
+
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
 
 lua << END
 require('lualine').setup {
