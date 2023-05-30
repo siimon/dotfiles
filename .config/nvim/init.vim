@@ -9,7 +9,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'moll/vim-node'
 Plug 'tpope/vim-surround'
-Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-unimpaired'
 Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'rust-lang/rust.vim'
@@ -72,6 +72,13 @@ map <leader>rcls :Octo review comments<CR>
 
 " Resolve thread
 map <leader>tr :Octo thread resolve<CR>
+
+" Git gutter mappings
+" Stage hunk
+map <leader>gs :GitGutterStageHunk<CR>
+
+" Unstage hunk
+map <leader>gu :GitGutterUndoHunk<CR>
 
 imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
