@@ -1,2 +1,15 @@
-[style]
 theme = "Dracula"
+
+blinking-cursor = true
+
+[fonts]
+size = 20
+family = "SauceCodePro Nerd Font" 
+
+[navigation]
+mode = "CollapsedTab"
+
+[window]
+#background-opacity = 0.8
+decorations = "Buttonless"
+blur = true

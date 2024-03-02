@@ -1,5 +1,4 @@
-[user]
-	name = Simon Nyberg
+[user] name = Simon Nyberg
 	email = simon@nyberg.io
 [includeIf "gitdir:~/work/"]
 	path = ~/work/.gitconfig-work 
@@ -7,23 +6,22 @@
 	ci = commit
 	co = checkout
 	st = status
-	automerge = !git config branch.master.remote origin && git config branch.master.merge refs/heads/master
-  lg = log --graph --topo-order --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cred<%an>'
-  df = difftool
+	lg = log --graph --topo-order --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cred<%an>'
+	df = difftool
 [color]
-  ui = auto
+	ui = auto
 	interactive = auto
 	diff = auto
 	status = auto
 	branch = auto
 [core]
 	excludesfile = ~/.gitignore
-  editor= nvim
+	editor= nvim
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [apply]
 	whitespace = nowarn
 [push]
-  default = simple
+	default = simple
 [diff]
 	tool = vimdiff
 [rebase]
