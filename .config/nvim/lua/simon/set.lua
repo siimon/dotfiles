@@ -14,3 +14,9 @@ vim.opt.signcolumn = "yes"
 vim.opt.lazyredraw = true
 vim.opt.updatetime = 50
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "swift",
+  callback = function()
+    vim.opt.commentstring = "// %s"
+  end,
+})
