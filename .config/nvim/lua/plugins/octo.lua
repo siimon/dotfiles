@@ -12,10 +12,12 @@ return {
         { "<leader>ghc", "<cmd>Octo review commit<cr>", desc = "Review commits" },
         { "<leader>ghn", "<cmd>Octo pr create draft<cr>", desc = "Create draft pull request" },
         { "<leader>ghx", "<cmd>Octo thread resolve<cr>", desc = "Resolve thread" },
+        { "<leader>ghO", "<cmd>Octo<cr>", desc = "Open interactive Octo telescope prompt" },
     },
     cmd = "Octo",
     config = function()
         require("octo").setup({
+          enable_builtin = true
         })
 
         vim.treesitter.language.register('markdown', 'octo')
