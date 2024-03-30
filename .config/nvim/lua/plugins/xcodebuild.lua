@@ -13,7 +13,8 @@ return {
     { "<leader>xb", "<cmd>XcodebuildBuild<cr>", desc = "Build Project" },
     { "<leader>xB", "<cmd>XcodebuildBuildForTesting<cr>", desc = "Build For Testing" },
     { "<leader>xr", "<cmd>XcodebuildBuildRun<cr>", desc = "Build & Run Project" },
-    { "<leader>xR", "<cmd>XcodebuildRun<cr>", desc = "Build & Run Project" },
+    { "<leader>xR", "<cmd>XcodebuildRun<cr>", desc = "Run Project" },
+    { "<leader>xC", "<cmd>XcodebuildCleanBuild<cr>", desc = "Clean & Build Project" },
     { "<leader>xt", "<cmd>XcodebuildTest<cr>", desc = "Run Tests" },
     { "<leader>xt", "<cmd>XcodebuildTestSelected<cr>", desc = "Run Selected Tests", mode = "v"},
     { "<leader>xT", "<cmd>XcodebuildTestClass<cr>", desc = "Run This Test Class" },
@@ -24,6 +25,7 @@ return {
     { "<leader>xp", "<cmd>XcodebuildSelectTestPlan<cr>", desc = "Select Test Plan" },
     { "<leader>xc", "<cmd>XcodebuildCancel<cr>", desc = "Cancel build" },
     { "<leader>xq", "<cmd>Telescope quickfix<cr>", desc = "Show QuickFix List" },
+    { "<leader>xS", "<cmd>XcodebuildSelectScheme<cr>", desc = "Select Scheme" },
   },
   config = function()
     require("xcodebuild").setup({
@@ -38,6 +40,9 @@ return {
       },
       test_explorer = {
         auto_focus = false
+      },
+      commands = {
+        extra_build_args = "-parallelizeTargets -skipPackageUpdates",
       },
     })
   end
