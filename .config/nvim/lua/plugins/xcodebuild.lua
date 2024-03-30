@@ -41,9 +41,6 @@ return {
       test_explorer = {
         auto_focus = false
       },
-      commands = {
-        extra_build_args = "-parallelizeTargets -skipPackageUpdates",
-      },
     })
   end
 }

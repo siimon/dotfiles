@@ -3,24 +3,21 @@ return {
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
+  opts = {
+    auto_preview = true,
+    auto_jump = {},
+    cycle_results = false,
+  },
   config = function()
-    require("trouble").setup({
-      auto_open = true,
-      auto_close = false,
-      auto_preview = true,
-      auto_jump = {},
-      cycle_results = false,
-    })
-
     vim.keymap.set("n", "<leader>tt", function()
       require("trouble").toggle()
     end, { desc = "Toggle trouble" })
 
-    vim.keymap.set("n", "[t", function()
+    vim.keymap.set("n", "]t", function()
       require("trouble").next({skip_groups = true, jump = true});
     end, { desc = "Next trouble" })
 
-    vim.keymap.set("n", "]t", function()
+    vim.keymap.set("n", "[t", function()
       require("trouble").previous({skip_groups = true, jump = true});
     end, { desc = "Previous trouble" })
 
@@ -34,13 +31,14 @@ return {
         if event.data.success then
           require("trouble").close()
         elseif not event.data.failedCount or event.data.failedCount > 0 then
+          -- vim.cmd.cclose()
           if next(vim.fn.getqflist()) then
             require("trouble").open({ focus = false, mode = "quickfix" })
           else
             require("trouble").close()
           end
 
-          require("trouble").refresh()
+          require("trouble").refresh({ mode = "quickfix" })
         end
       end,
     })

@@ -2,14 +2,6 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   event = "VeryLazy",
-  opts = {
-    -- options = {
-    --   sections = {
-    --     lualine_b = { "diff", "diagnostics" },
-    --     lualine_x = { "encoding" }
-    --   },
-    -- },
-  },
   config = function()
     local function xcodebuild_device()
       if vim.g.xcodebuild_platform == "macOS" then
@@ -42,6 +34,11 @@ return {
     end
 
     require('lualine').setup({
+      options = {
+        -- disabling section separators fixes
+        -- the disappearing start screen issue
+        section_separators =  "",
+      },
       sections = {
         lualine_b = { "diff", "diagnostics" },
         lualine_x = {
