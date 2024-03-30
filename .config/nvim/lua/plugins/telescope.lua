@@ -1,32 +1,25 @@
 return {
 	'nvim-telescope/telescope.nvim',
 	dependencies = { 'nvim-lua/plenary.nvim' },
+	opts = {},
 	config = function()
-    require('telescope').setup({
-    })
-    local builtin = require('telescope.builtin')
+		local builtin = require('telescope.builtin')
 
-    -- Don't use previewer in file listing
-		vim.keymap.set('n', '<leader>pf', "<cmd>lua require('telescope.builtin').find_files{ previewer = false }<CR>", { desc = "Find files" })
-
-    vim.keymap.set('n', '<leader>pws', function()
-            local word = vim.fn.expand("<cword>")
-            builtin.grep_string({ search = word })
-        end
-    , { desc = "Grep word under cursor" })
-
-		vim.keymap.set('n', '<leader>ps', function()
-      builtin.live_grep()
+		vim.keymap.set('n', '<leader>sf', function()
+			builtin.find_files { previewer = false }
 		end,
-    { desc = "Grep string" })
+		{ desc = "[S]earch [F]iles" })
 
-    vim.keymap.set('n', '<leader>o', function()
-      builtin.lsp_workspace_symbols({ query = vim.fn.input("LSP Workspace Symbols > "), symbols = { "class", "struct" } })
-    end, { desc = "LSP workspace symbols" })
+		vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = "[S]earch by [G]rep" })
+		vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = "[S]earch current [W]ord" })
+		vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = "[S]earch [R]esume" })
+		vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = "[S]earch [H]elp tags" })
+		vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = "[S]earch [C]ommands" })
+		vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = "[S]earch [K]eymaps" })
+		vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 
-    vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = "Git branches" })
-    vim.keymap.set('n', '<leader>vh', builtin.help_tags, { desc = "nvim help tags" })
-    vim.keymap.set('n', '<leader>pt', builtin.treesitter, { desc = "Treesitter" })
+		vim.keymap.set('n', '<leader>sb', builtin.git_branches, { desc = "[S]earch git [B]ranches" })
+		vim.keymap.set('n', '<leader>st', builtin.treesitter, { desc = "[S]earch [T]reesitter" })
 	end,
 }
 
