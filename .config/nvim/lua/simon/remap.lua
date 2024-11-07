@@ -17,7 +17,7 @@ vim.keymap.set("n", "<ESC>", "<cmd>nohlsearch<CR>", { desc = "Clear search highl
 vim.keymap.set("n", "<leader>cx", vim.cmd.cclose, { desc = "Close quickfix" })
 vim.keymap.set("n", "<leader>lx", vim.cmd.lclose, { desc = "Close location list" })
 
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "Yank to system clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank to system clipboard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank to system clipboard" })
 
 -- Keybinds to make split navigation easier.
@@ -26,6 +26,8 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+vim.keymap.set('n', '<leader>r', ':%s/<c-r><c-w>//g<left><left>', { desc = 'Search and replace word under cursor' })
 
 -- LSP
 --
@@ -53,10 +55,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts, { desc = "[G]o to [D]efinition" })
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts, { desc = "Show hover" })
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts, { desc = "[G]o to [I]mplementation" })
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts, { desc = "Show signature help" })
+    -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts, { desc = "Show signature help" })
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts, { desc = "Go to type [D]efinition" })
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts, { desc = "LSP rename" })
-    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts, { desc = "LSP [C]ode [A]ction" })
+    -- vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts, { desc = "LSP [C]ode [A]ction" })
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts, { desc = "References" })
     vim.keymap.set('n', '<space>f', function()
       vim.lsp.buf.format { async = true }

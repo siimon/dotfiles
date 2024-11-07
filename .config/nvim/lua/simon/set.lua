@@ -12,8 +12,6 @@ vim.opt.smartcase = true
 
 vim.opt.smartindent = true
 
-vim.opt.signcolumn = "yes"
-
 vim.opt.lazyredraw = true
 vim.opt.updatetime = 50
 

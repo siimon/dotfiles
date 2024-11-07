@@ -5,7 +5,6 @@ return {
     "j-hui/fidget.nvim",
     "MunifTanjim/nui.nvim",
   },
-  dev = true,
   ft = { "swift" },
   keys = {
     { "<leader>X", "<cmd>XcodebuildPicker<cr>", desc = "Show Xcodebuild Actions" },
@@ -15,9 +14,8 @@ return {
     { "<leader>xr", "<cmd>XcodebuildBuildRun<cr>", desc = "Build & Run Project" },
     { "<leader>xR", "<cmd>XcodebuildRun<cr>", desc = "Run Project" },
     { "<leader>xC", "<cmd>XcodebuildCleanBuild<cr>", desc = "Clean & Build Project" },
-    { "<leader>xt", "<cmd>XcodebuildTest<cr>", desc = "Run Tests" },
     { "<leader>xt", "<cmd>XcodebuildTestSelected<cr>", desc = "Run Selected Tests", mode = "v"},
-    { "<leader>xT", "<cmd>XcodebuildTestClass<cr>", desc = "Run This Test Class" },
+    { "<leader>xt", "<cmd>XcodebuildTestExplorerRerunTests<cr>", desc = "Rerun previous tests" },
     { "<leader>xl", "<cmd>XcodebuildToggleLogs<cr>", desc = "Toggle Xcodebuild Logs" },
     { "<leader>xe", "<cmd>XcodebuildTestExplorerToggle<cr>", desc = "Toggle Test Explorer" },
     { "<leader>xs", "<cmd>XcodebuildFailingSnapshots<cr>", desc = "Show Failing Snapshots" },
@@ -41,6 +39,11 @@ return {
       test_explorer = {
         auto_focus = false
       },
+      integrations = {
+        xcodebuild_offline = {
+          enabled = true,
+        },
+      }
     })
   end
 }

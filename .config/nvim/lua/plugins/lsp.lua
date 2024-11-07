@@ -19,8 +19,7 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
-                "rust_analyzer",
-                "tsserver",
+                "rust_analyzer"
             }
         })
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -49,9 +48,7 @@ return {
 
             require("lspconfig")["sourcekit"].setup {
                 capabilities = capabilities,
-                cmd = { "xcrun", "sourcekit-lsp" },
                 on_attach = function(client, bufnr)
-                    require("mason-lspconfig").common_on_attach(client, bufnr)
                 end,
                 root_dir = function(filename, _)
                     local util = require("lspconfig.util")
@@ -110,6 +107,8 @@ return {
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
                     { name = "git" },
+                    { name = "path" },
+                    { name = "cmdline" },
                     -- { name = "vsnip" }, -- For vsnip users.
                     { name = "luasnip" }, -- For luasnip users.
                     -- { name = "ultisnips" }, -- For ultisnips users.

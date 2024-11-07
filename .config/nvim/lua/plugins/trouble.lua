@@ -18,7 +18,7 @@ return {
     end, { desc = "Next trouble" })
 
     vim.keymap.set("n", "[t", function()
-      require("trouble").previous({skip_groups = true, jump = true});
+      require("trouble").prev({skip_groups = true, jump = true});
     end, { desc = "Previous trouble" })
 
     vim.api.nvim_create_autocmd("User", {
